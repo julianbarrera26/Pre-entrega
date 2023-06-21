@@ -96,6 +96,7 @@ let consultarInmueble = document.querySelectorAll(".inmueble-consultar")
 
 
 function cargarInmuebles(inmuebles) {
+
     contenedorInmueble.innerHTML = "";
     
     inmuebles.forEach(inmueble => {

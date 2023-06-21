@@ -49,3 +49,7 @@ main{
     border: 0;
     padding: 0,50rem;
 }
+
+.disabled{
+    display: none;
+}

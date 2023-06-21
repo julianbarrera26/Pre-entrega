@@ -42,40 +42,23 @@
     <main>
         <h2 class="titulo-2">CONSULTAS</h2>
         <div class="contenedor-inmuebles">
-            <p class="inmueble-vacio">Ningun inmueble seleccionado</p>
-            <div class="consultas-inmuebles">
-                <div class="consulta-inmueble">
-                    <img src="/img/1.jpg" alt="" srcset="">
-                    <div class="consulta-inmuebles-titulo">
-                        <small>titulo</small>
-                        <h3>casa 2 dormitorios</h3>
-                    </div>
-                    <div class="consulta-inmuebles-precio">
-                        <small>precio</small>
-                        <h3>80000</h3>
-                    </div>
-                </div>
-                <div class="consulta-inmueble">
-                    <img src="/img/1.jpg" alt="" srcset="">
-                    <div class="consulta-inmuebles-titulo">
-                        <small>titulo</small>
-                        <h3>casa 2 dormitorios</h3>
-                    </div>
-                    <div class="consulta-inmuebles-precio">
-                        <small>precio</small>
-                        <h3>80000</h3>
-                    </div>
-                </div>
-                <div>
-                    <div class="consulta-nombre-cliente">
-                        <input type="text" placeholder="NOMBRE">
-                        <input type="text" placeholder="APELLIDO">
-                        <input type="text" placeholder="ESCRIBA SU CONSULTA">
-                        <button class="btn btn-primary btn-lg" class="consulta-enviar">ENVIAR</button>
-                        <button class="consulta-cancelar">Cancelar consulta</button>
-                    </div>
+            <p id="consulta-vacia" class="inmueble-vacio">Ningun inmueble seleccionado</p>
+            <div id="contenedor-consultas" class="consultas-inmuebles disabled">
+                
+            </div>            
+            <div>
+                <div id="consulta" class="consulta disabled">
+                    <input type="text" placeholder="NOMBRE">
+                    <input type="text" placeholder="APELLIDO">
+                    <input type="text" placeholder="ESCRIBA SU CONSULTA">
+                </div>   
+                <div id="consulta-botones" class="consulta-botones disabled">
+                    <button id="consulta-enviar" class="btn btn-primary btn-lg" class="consulta-enviar">ENVIAR</button>
+                    <button id="consulta-cancelar" class="consulta-cancelar">Cancelar consulta</button>
                 </div>
             </div>
+            
+            <p id="consultado" class="consultado">Muchas gracias por su compra</p>
         </div>
 
 
@@ -85,6 +68,6 @@
     <footer>
 
     </footer>
-    <script src="/js/main.js"></script>
+    <script src="js/consultas.js"></script>
 </body>
 </html>
