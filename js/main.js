@@ -1,94 +1,13 @@
-inmuebles = [
-    {
-        id:"casa-1",
-        titulo: "casa 2 dormitorios",
-        imagen:"./img/1.jpg",
-        descripcion: "loasundkasndandasnoasndoa",
-        clasificacion: {
-            nombre:"Casas",
-            id:"casas"
-        },
-        precio:80000
-    },
-    {
-        id:"casa-2",
-        titulo: "casa centrica",
-        imagen:"./img/1.jpg",
-        descripcion: "loasundkasndandasnoasndoa",
-        clasificacion: {
-            nombre:"Casas",
-            id:"casas"
-        },
-        precio:70000
-    },
-    {
-        id:"casa-3",
-        titulo: "casa barrio alberdi",
-        imagen:"./img/1.jpg",
-        descripcion: "loasundkasndandasnoasndoa",
-        clasificacion: {
-            nombre:"Casas",
-            id:"casas"
-        },
-        precio:90000
-    },
-    {
-        id:"casa-4",
-        titulo: "casa 1 dormitorio",
-        imagen:"./img/1.jpg",
-        descripcion: "loasundkasndandasnoasndoa",
-        clasificacion: {
-            nombre:"Casas",
-            id:"casas"
-        },
-        precio:100000
-    },
-    {
-        id:"depto-1",
-        titulo: "depto 2 dormitorios",
-        imagen:"./img/2.jpg",
-        descripcion: "loasundkasndandasnoasndoa",
-        clasificacion: {
-            nombre:"Departamentos",
-            id:"departamentos"
-        },
-        precio:50000
-    },
-    {
-        id:"depto-2",
-        titulo: "depto barrio jardin",
-        imagen:"./img/2.jpg",
-        descripcion: "loasundkasndandasnoasndoa",
-        clasificacion: {
-            nombre:"Departamentos",
-            id:"departamentos"
-        },
-        precio:80000
-    },
-    {
-        id:"depto-3",
-        titulo: "depto con balcon",
-        imagen:"./img/2.jpg",
-        descripcion: "loasundkasndandasnoasndoa",
-        clasificacion: {
-            nombre:"Departamentos",
-            id:"departamentos"
-        },
-        precio:80000
-    },
-    {
-        id:"depto-4",
-        titulo: "depto 2 dormitorios",
-        imagen:"./img/2.jpg",
-        descripcion: "loasundkasndandasnoasndoa",
-        clasificacion: {
-            nombre:"Departamentos",
-            id:"departamentos"
-        },
-        precio:90000
-    },
+let inmuebles = [];
 
-];
+fetch("./js/inmuebles.json")
+    .then(response => response.json())
+    .then(data => {
+        inmuebles = data;
+        cargarInmuebles(inmuebles);
+    });
+    
+
 
 const contenedorInmueble = document.querySelector("#contenedor-inmuebles");
 const botonesCategoria = document.querySelectorAll(".boton-categoria");
@@ -117,7 +36,7 @@ function cargarInmuebles(inmuebles) {
     botonesConsultar()
 }
 
-cargarInmuebles(inmuebles);
+
 
 
 
@@ -147,6 +66,24 @@ function botonesConsultar() {
 let inmuebleEnConsulta = [];
 
 function consultar(e) {
+    Swal.fire({
+        title: '<strong>GENIAL!! <u></u></strong>',
+        icon: 'success',
+        html:
+        'Ya seleccionaste tu inmueble con EXITO!! ' +
+        '<b> Dirigete a </b><a href="/consultas.html">Consultas</a> ' +
+        'o sigue seleccionando inmuebles ',
+        showCloseButton: true,
+        showCancelButton: true,
+        focusConfirm: false,
+        confirmButtonText:
+        '<i class="fa fa-thumbs-up"></i> EXCELENTE!',
+        confirmButtonAriaLabel: 'Thumbs up, great!',
+        cancelButtonText:
+        '<i class="fa fa-thumbs-down"></i>',
+        cancelButtonAriaLabel: 'Thumbs down'
+    })
+
     const botonId = e.currentTarget.id;
     const inmuebleConsulta = inmuebles.find (inmueble => inmueble.id === botonId);
     if(inmuebleEnConsulta.some(inmueble => inmueble.id === botonId)) {

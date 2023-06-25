@@ -21,7 +21,7 @@ if(consultasEnEspera) {
         const div = document.createElement("div");
         div.classList.add("consulta-inmueble");
         div.innerHTML = `
-        <img class= "inmuebles-imagen"src="${inmueble.imagen}" alt="${inmueble.titulo}" srcset="">
+        <img class= "inmueble-imagen"src="${inmueble.imagen}" alt="${inmueble.titulo}" srcset="">
         <div class="consulta-inmuebles-titulo">
             <small>titulo</small>
             <h3>${inmueble.titulo}</h3>
