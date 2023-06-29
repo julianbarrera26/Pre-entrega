@@ -1,14 +1,18 @@
-const consultasEnEspera = JSON.parse(localStorage.getItem("inmueble-en-consulta"));
+let consultasEnEspera = localStorage.getItem("inmueble-en-consulta");
+consultasEnEspera = JSON.parse(consultasEnEspera);
 
 const consultaVacia = document.querySelector("#consulta-vacia");
 const contenedorConsulta = document.querySelector("#contenedor-consultas");
 const consulta = document.querySelector("#consulta");
 const consultaBotones = document.querySelector("#consulta-botones");
 const consultado = document.querySelector("#consultado");
-const botonCancelar = document.querySelector ("#consulta-cancelar")
+const botonCancelar = document.querySelector ("#consulta-cancelar");
+const formulario = document.querySelector('#formulario')
+
+function cargarinmueblesEnConsulta(){
+if(consultasEnEspera && consultasEnEspera.length > 0){
 
 
-if(consultasEnEspera) {
     consultaVacia.classList.add("disabled");
     contenedorConsulta.classList.remove("disabled");
     consulta.classList.remove("disabled");
@@ -21,20 +25,21 @@ if(consultasEnEspera) {
         const div = document.createElement("div");
         div.classList.add("consulta-inmueble");
         div.innerHTML = `
-        <img class= "inmueble-imagen"src="${inmueble.imagen}" alt="${inmueble.titulo}" srcset="">
+        <img class= "inmueble-imagen img"src="${inmueble.imagen}" alt="${inmueble.titulo}" srcset="">
         <div class="consulta-inmuebles-titulo">
-            <small>titulo</small>
-            <h3>${inmueble.titulo}</h3>
+            <h1 class="titulo" >Titulo</h1>
+            <h3 class="titulo" >${inmueble.titulo}</h3>
         </div>
         <div class="consulta-inmuebles-precio">
-            <small>precio</small>
-            <h3>${inmueble.precio}</h3>
-            <small> 12 cuotas!! </small>
-            <h3>${inmueble.precio / "12"}</h3> 
+            <h1 class="titulo">Precio</h1>
+            <h3 class="titulo">${inmueble.precio}</h3>
+            <h1 class="titulo"> 12 cuotas!! </h1>
+            <h3 class="titulo">${inmueble.precio / "12"}</h3> 
         </div>`;
 
         contenedorConsulta.append(div);
-    });
+    })
+
 
 
 } else {
@@ -42,15 +47,48 @@ if(consultasEnEspera) {
     contenedorConsulta.classList.add("disabled");
     consulta.classList.add("disabled");
     consultaBotones.classList.add("disabled");
-    consultado.classList.add("disabled")
+    consultado.classList.add("disabled");
+
+}}
+
+cargarinmueblesEnConsulta();
+
+botonCancelar.addEventListener("click",vaciarConsulta);
+function vaciarConsulta(){Swal.fire({
+    title: '<strong>CONSULTA CANCELADA! <u></u></strong>',
+    icon: 'error',
+    html:
+    'cancelaste tu inmueble !! ' +
+    '<b> Dirigete a </b><a href="/index.html">Inicio</a> ' +
+    'y sigue seleccionando inmuebles ',
+    showCloseButton: true,
+    showCancelButton: true,
+    focusConfirm: false,
+    confirmButtonText:
+    '<i class="fa fa-thumbs-up"></i> ACEPTAR',
+    confirmButtonAriaLabel: 'PERFECTO!'
+})
+
+
+    consultasEnEspera.length = 0;
+    localStorage.setItem("inmueble-en-consulta", JSON.stringify(consultasEnEspera));
+    cargarinmueblesEnConsulta()
 
 }
 
-//botonCancelar.addEventListener ("click" , vaciarConsulta);
-//function vaciarConsulta(){
-   // consultasEnEspera.length = 0;
-   // localStorage.setItem("inmueble-en-consulta", JSON.stringify(consultasEnEspera));
-   // cargarInmuebles()
 
 
-//}
+
+formulario.addEventListener("submit", enviarFormulario)
+
+function enviarFormulario (e){
+    const nombre = document.querySelector ("#nombre").value
+    const apellido = document.querySelector ("#apellido").value
+    const consulta = document.querySelector ("#texto").value
+
+
+    alert(nombre,apellido,consulta)
+
+    consultasEnEspera.length = 0;
+    localStorage.setItem("inmueble-en-consulta", JSON.stringify(consultasEnEspera));
+}

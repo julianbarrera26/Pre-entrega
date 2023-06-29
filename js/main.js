@@ -62,8 +62,16 @@ function botonesConsultar() {
         boton.addEventListener("click", consultar);
     });
 }
-
 let inmuebleEnConsulta = [];
+const consultasEnEsperaLS = localStorage.getItem("inmueble-en-consulta");
+
+
+if(consultasEnEsperaLS){
+    inmuebleEnConsulta = JSON.parse(consultasEnEsperaLS);
+}
+else{
+    inmuebleEnConsulta = [];
+}
 
 function consultar(e) {
     Swal.fire({

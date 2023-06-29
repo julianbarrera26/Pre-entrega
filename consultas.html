@@ -12,7 +12,7 @@
 </head>
 <body>
     <header class="barra">
-        <h1 class="logo">INMOBILIARIA</h1>
+        <h1 class="logo"><img class="logoimg" src="/img/logo.jpg" alt="" srcset="">INMOBILIARIA</h1>
         <nav>
             <ul>
                 <li>
@@ -38,28 +38,27 @@
                 </li>
             </ul>
         </nav>
-
+        <a href=""><img src="" alt="" srcset=""></a>
     </header>
     <main>
-        <h2 class="titulo-2">CONSULTAS</h2>
+        <h2 class="titulo-principal">CONSULTAS</h2>
         <div class="contenedor-inmuebles">
-            <p id="consulta-vacia" class="inmueble-vacio">Ningun inmueble seleccionado</p>
+            <p id="consulta-vacia" class="inmueble-vacio titulo-principal">Ningun inmueble seleccionado</p>
             <div id="contenedor-consultas" class="consultas-inmuebles disabled">
-                
             </div>            
-            <div>
+            <form id="formulario">
                 <div id="consulta" class="consulta disabled">
-                    <input type="text" placeholder="NOMBRE">
-                    <input type="text" placeholder="APELLIDO">
-                    <input type="text" placeholder="ESCRIBA SU CONSULTA">
+                    <input type="text" id="nombre" name="dato" class="dato" placeholder="NOMBRE">
+                    <input type="text" id="apellido" name="dato" class="dato" placeholder="APELLIDO">
+                    <input type="text" id="texto" name="dato" class="dato" placeholder="ESCRIBA SU CONSULTA">
                 </div>   
                 <div id="consulta-botones" class="consulta-botones disabled">
-                    <button id="consulta-enviar" class="btn btn-primary btn-lg" class="consulta-enviar">ENVIAR</button>
-                    <button id="consulta-cancelar" class="consulta-cancelar">Cancelar consulta</button>
+                    <button id="consulta-enviar" type="submit" class="btn btn-primary btn-lg" >ENVIAR</button>
+                    <button id="consulta-cancelar" class="consulta-cancelar btn btn-primary btn-lg">Cancelar consulta</button>
                 </div>
-            </div>
+            </form>
             
-            <p id="consultado" class="consultado">Muchas gracias por su compra</p>
+            <p id="consultado" class="consultado titulo-principal">Muchas gracias por su compra</p>
         </div>
 
 
@@ -67,6 +66,9 @@
 
     </main>
     <footer>
+        <a  href=""><img class="imagen-redes" src="/img/Facebook.webp" alt="" srcset=""></a>
+        <a  href=""><img class="imagen-redes" src="/img/instagram.png" alt="" srcset=""></a>
+        <a  href=""><img class="imagen-redes" src="/img/whatsapp.png" alt="" srcset=""></a>
 
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

@@ -23,7 +23,8 @@ ul{
 }
 
 main{
-    background-color: rgb(83, 53, 253);
+    background: linear-gradient(100deg,rgb(6, 48, 240), lightblue);
+
 }
 
 .contenedor-inmuebles{
@@ -52,4 +53,51 @@ main{
 
 .disabled{
     display: none;
+}
+
+.logoimg{
+    width: 10%;
+}
+
+.imagen-redes{
+    width: 150px;
+    margin-left: 10cm;
+    margin-bottom: 3cm;
+    margin-top: 3cm;
+}
+
+footer{
+    background: linear-gradient(45deg, blue, red);
+}
+
+header{
+    background: linear-gradient(45deg, blue, red);
+}
+
+.titulo-principal{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    -webkit-text-stroke: 2px white;
+    margin-bottom: 2cm;
+    margin-left: 3cm;
+    padding-top: 2cm;
+}
+
+.logo{
+    font-size: 2cm;
+    margin-left: 3cm;
+}
+.titulo{
+    padding-left: 3cm;
+}
+
+#contenedor-consultas{
+    display: grid;
+    grid-template-areas: 
+        "imagen titulo"
+        "imagen titulo"
+        "imagen titulo"
+        "imagen titulo"
+        "imagen titulo"
+        "imagen titulo";
+
 }
