@@ -16,7 +16,7 @@ let consultarInmueble = document.querySelectorAll(".inmueble-consultar")
 
 function cargarInmuebles(inmuebles) {
 
-    contenedorInmueble.innerHTML = "";
+    contenedorInmueble.innerHTML = " ";
     
     inmuebles.forEach(inmueble => {
         const div = document.createElement("div");
@@ -63,7 +63,7 @@ function botonesConsultar() {
     });
 }
 let inmuebleEnConsulta = [];
-const consultasEnEsperaLS = localStorage.getItem("inmueble-en-consulta");
+const consultasEnEsperaLS = localStorage.getItem(".inmueble-en-consulta");
 
 
 if(consultasEnEsperaLS){
@@ -79,7 +79,7 @@ function consultar(e) {
         icon: 'success',
         html:
         'Ya seleccionaste tu inmueble con EXITO!! ' +
-        '<b> Dirigete a </b><a href="/consultas.html">Consultas</a> ' +
+        '<b> Dirigete a </b><a href="./consultas.html">Consultas</a> ' +
         'o sigue seleccionando inmuebles ',
         showCloseButton: true,
         showCancelButton: true,
@@ -103,7 +103,7 @@ function consultar(e) {
         inmuebleEnConsulta.push(inmuebleConsulta);
     }
         
-    localStorage.setItem("inmueble-en-consulta",JSON.stringify(inmuebleEnConsulta));
+    localStorage.setItem(".inmueble-en-consulta",JSON.stringify(inmuebleEnConsulta));
 
 
 }

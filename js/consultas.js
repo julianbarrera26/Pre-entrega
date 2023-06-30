@@ -59,7 +59,7 @@ function vaciarConsulta(){Swal.fire({
     icon: 'error',
     html:
     'cancelaste tu inmueble !! ' +
-    '<b> Dirigete a </b><a href="/index.html">Inicio</a> ' +
+    '<b> Dirigete a </b><a href="./index.html">Inicio</a> ' +
     'y sigue seleccionando inmuebles ',
     showCloseButton: true,
     showCancelButton: true,
