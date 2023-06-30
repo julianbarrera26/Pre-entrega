@@ -16,7 +16,7 @@ let consultarInmueble = document.querySelectorAll(".inmueble-consultar")
 
 function cargarInmuebles(inmuebles) {
 
-    contenedorInmueble.innerHTML = " ";
+    contenedorInmueble.innerHTML = "";
     
     inmuebles.forEach(inmueble => {
         const div = document.createElement("div");
