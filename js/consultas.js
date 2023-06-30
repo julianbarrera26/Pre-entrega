@@ -1,4 +1,4 @@
-let consultasEnEspera = localStorage.getItem("inmueble-en-consulta");
+let consultasEnEspera = localStorage.getItem(".inmueble-en-consulta");
 consultasEnEspera = JSON.parse(consultasEnEspera);
 
 const consultaVacia = document.querySelector("#consulta-vacia");
@@ -91,4 +91,11 @@ function enviarFormulario (e){
 
     consultasEnEspera.length = 0;
     localStorage.setItem("inmueble-en-consulta", JSON.stringify(consultasEnEspera));
+
+    consultaVacia.classList.add("disabled");
+    contenedorConsulta.classList.add("disabled");
+    consulta.classList.add("disabled");
+    consultaBotones.classList.add("disabled");
+    consultado.classList.remove("disabled")
+
 }
