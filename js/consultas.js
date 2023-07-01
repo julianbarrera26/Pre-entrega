@@ -54,25 +54,11 @@ if(consultasEnEspera && consultasEnEspera.length > 0){
 cargarinmueblesEnConsulta();
 
 botonCancelar.addEventListener("click",vaciarConsulta);
-function vaciarConsulta(){Swal.fire({
-    title: '<strong>CONSULTA CANCELADA! <u></u></strong>',
-    icon: 'error',
-    html:
-    'cancelaste tu inmueble !! ' +
-    '<b> Dirigete a </b><a href="./index.html">Inicio</a> ' +
-    'y sigue seleccionando inmuebles ',
-    showCloseButton: true,
-    showCancelButton: true,
-    focusConfirm: false,
-    confirmButtonText:
-    '<i class="fa fa-thumbs-up"></i> ACEPTAR',
-    confirmButtonAriaLabel: 'PERFECTO!'
-})
-
+function vaciarConsulta(){
 
     consultasEnEspera.length = 0;
     localStorage.setItem("inmueble-en-consulta", JSON.stringify(consultasEnEspera));
-    cargarinmueblesEnConsulta()
+    cargarinmueblesEnConsulta();
 
 }
 
@@ -90,6 +76,7 @@ function enviarFormulario (e){
     alert(nombre,apellido,consulta)
 
     consultasEnEspera.length = 0;
+    cargarinmueblesEnConsulta();
     localStorage.setItem("inmueble-en-consulta", JSON.stringify(consultasEnEspera));
 
     consultaVacia.classList.add("disabled");
