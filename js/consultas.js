@@ -54,12 +54,29 @@ if(consultasEnEspera && consultasEnEspera.length > 0){
 
 cargarinmueblesEnConsulta();
 
-botonCancelar.addEventListener("click",vaciarConsulta);
+botonCancelar.addEventListener("submit",vaciarConsulta);
 function vaciarConsulta(){
 
-    consultasEnEspera.length = 0;
-    localStorage.setItem(".inmueble-en-consulta", JSON.stringify(consultasEnEspera));
-    cargarinmueblesEnConsulta();
+    Swal.fire({
+        title: '¿Estás seguro?',
+        icon: 'question',
+        html: `Se van a borrar ${consultasEnEspera.reduce((acc, inmueble) => acc + inmueble.cantidad, 0)} productos.`,
+        showCancelButton: true,
+        focusConfirm: false,
+        confirmButtonText: 'Sí',
+        cancelButtonText: 'No',
+        timerProgressBar:true,
+    }).then((result) => {
+        if (result.isConfirmed) {
+            consultasEnEspera.length = 0;
+            localStorage.setItem("inmueble-en-consulta", JSON.stringify(consultasEnEspera));
+            cargarProductosCarrito();
+        }
+    })
+
+    // consultasEnEspera.length = 0;
+    // localStorage.setItem(".inmueble-en-consulta", JSON.stringify(consultasEnEspera));
+    // cargarinmueblesEnConsulta();
 
 }
 
@@ -69,7 +86,12 @@ function vaciarConsulta(){
 formulario.addEventListener("submit", enviarFormulario)
 
 function enviarFormulario (){
-    alert();
+    
+    const nombre = document.querySelector ("#nombre").value
+    const apellido = document.querySelector ("#apellido").value
+    const consulta = document.querySelector ("#texto").value
+
+    alert(nombre,apellido);
     
     consultasEnEspera.length = 0;
     localStorage.setItem(".inmueble-en-consulta", JSON.stringify(consultasEnEspera));
@@ -84,9 +106,7 @@ function enviarFormulario (){
 
 }
 
-const nombre = document.querySelector ("#nombre").value
-// const apellido = document.querySelector ("#apellido").value
-// const consulta = document.querySelector ("#texto").value
+
 
 const alert= async()=>{    const { value: email } = await Swal.fire({
     input: 'email',
@@ -94,6 +114,8 @@ const alert= async()=>{    const { value: email } = await Swal.fire({
     title: ` Gracias ${nombre}`,
     text: 'Ingresa tu email',
     confirmButtonText: "cerrar",
+    timer:30000, 
+    timerProgressBar: true,
 
 });
 if (email) {
