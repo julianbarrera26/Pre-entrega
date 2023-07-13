@@ -66,6 +66,10 @@ main{
     margin-top: 3cm;
 }
 
+.inmueble-imagen{
+    width: 10cm;
+}
+
 footer{
     background: linear-gradient(45deg, blue, red);
 }
@@ -87,17 +91,26 @@ header{
     margin-left: 3cm;
 }
 .titulo{
-    padding-left: 3cm;
+    font-size: 1rem;
+}
+.contenedor-inmuebles-consultas{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.contenedor-consultas{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--clr-gray);
+    color: var(--clr-main);
+    padding: .5rem;
+    padding-right: 1.5rem;
+    border-radius: 1rem;
+    padding-left: 4rem;
 }
 
-#contenedor-consultas{
-    display: grid;
-    grid-template-areas: 
-        "imagen titulo"
-        "imagen titulo"
-        "imagen titulo"
-        "imagen titulo"
-        "imagen titulo"
-        "imagen titulo";
-
+.imagen-consulta{
+    width: 4rem;
+    border-radius: 1rem;
 }
