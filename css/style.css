@@ -91,7 +91,18 @@ header{
     margin-left: 3cm;
 }
 .titulo{
-    font-size: 1rem;
+    font-size: 2,5rem;
+    background-color: aliceblue;
+    padding-top: 0.5cm;
+    padding-bottom: 0,5cm;
+    border-radius: 1cm;
+    text-align: center;
+    border-style: double;
+    border-color: black;
+}
+.consulta-inmueble-titulo {
+    align-content: center;
+    border-radius: 20cm;
 }
 .contenedor-inmuebles-consultas{
     display: flex;
@@ -113,4 +124,35 @@ header{
 .imagen-consulta{
     width: 4rem;
     border-radius: 1rem;
+}
+
+.consulta{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: 600px;
+    top: 500px;
+}
+
+#nombre{
+    width: 20cm;
+}
+
+.dato{
+    align-content: space-between;
+    margin-top: 1cm;
+}
+
+#texto{
+    padding-bottom: 6cm;
+}
+
+.consulta-botones{
+    margin-left: 5cm;
+    margin-top: 2cm;
+
+}
+
+.consulta-cancelar{
+    margin-left: 5cm;
 }

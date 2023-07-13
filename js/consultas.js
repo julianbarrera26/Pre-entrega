@@ -49,6 +49,8 @@ if(consultasEnEspera && consultasEnEspera.length > 0){
     consulta.classList.add("disabled");
     consultaBotones.classList.add("disabled");
     consultado.classList.add("disabled");
+    formulario.classList.add("disabled");
+
 
 }}
 
